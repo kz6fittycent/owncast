@@ -1,0 +1,51 @@
+name: owncast
+adopt-info: owncast
+summary: Take control over your content and stream it yourself.
+description: |
+  Take control over your content and stream it yourself.
+
+license: MIT
+
+base: core18
+grade: stable 
+confinement: strict
+
+architectures:
+  - build-on: amd64
+
+apps:
+  owncast:
+    command: launch
+    plugs:
+      - home
+      - network
+      - network-bind
+
+parts:
+  launcher:
+    plugin: dump
+    source: scripts
+    
+  owncast:
+    source: https://github.com/owncast/owncast
+    source-type: git
+    plugin: nil
+    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
+          
+    stage-packages:
+      - libslang2
+      - freeglut3 
+      - libglu1-mesa   
+      - ffmpeg
+      - wget
+      - unzip
+      
+  cleanup:
+    after:
+      - owncast
+      - launcher
+    plugin: nil      
+    
