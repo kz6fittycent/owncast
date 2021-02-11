@@ -2,7 +2,7 @@
 
 ## Installation
 ```
-sudo snap install owncast
+sudo snap install owncast --edge
 ```
 
 ## First run
