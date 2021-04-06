@@ -15,21 +15,16 @@ architectures:
 
 apps:
   owncast:
-    command: launch
+    command: go run main.go pkged.go
     plugs:
       - home
       - network
       - network-bind
 
-parts:
-  launcher:
-    plugin: dump
-    source: scripts
-    
   owncast:
     source: https://github.com/owncast/owncast
     source-type: git
-    plugin: nil
+    plugin: go
     
     override-pull: |
       snapcraftctl pull
@@ -40,12 +35,4 @@ parts:
       - freeglut3 
       - libglu1-mesa   
       - ffmpeg
-      - wget
-      - unzip
-      
-  cleanup:
-    after:
-      - owncast
-      - launcher
-    plugin: nil      
     
