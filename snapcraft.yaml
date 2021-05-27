@@ -6,7 +6,7 @@ description: |
 
 license: MIT
 
-base: core18
+base: core20
 grade: stable 
 confinement: strict
 
@@ -15,7 +15,7 @@ architectures:
 
 apps:
   owncast:
-    command: main.go
+    command: bin/main
     plugs:
       - home
       - network
@@ -25,6 +25,7 @@ apps:
     source: https://github.com/owncast/owncast
     source-type: git
     plugin: go
+    go-import-path: github.com/owncast/owncast
     
     override-pull: |
       snapcraftctl pull
