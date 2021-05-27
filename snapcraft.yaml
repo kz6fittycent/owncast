@@ -15,7 +15,7 @@ architectures:
 
 apps:
   owncast:
-    command: go run bin/main.go
+    command: bin/go run main.go
     plugs:
       - home
       - network
