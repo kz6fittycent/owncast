@@ -15,7 +15,7 @@ architectures:
 
 apps:
   owncast:
-    command: bin/main
+    command: $SNAP/bin/main.go
     plugs:
       - home
       - network
