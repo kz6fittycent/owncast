@@ -9,23 +9,30 @@ license: MIT
 base: core20
 grade: stable 
 confinement: strict
+compression: lzo
 
 architectures:
   - build-on: amd64
+  
+assumes:
+  - command-chain  
 
 apps:
   owncast:
-    command: $SNAP/bin/main.go
+    command: bin/owncast
+    command-chain: 
+      - bin/homeishome-launch      
     plugs:
       - home
       - network
       - network-bind
-
+      
+parts:
   owncast:
     source: https://github.com/owncast/owncast
     source-type: git
     plugin: go
-    go-import-path: github.com/owncast/owncast
+    go-channel: latest/stable
     
     override-pull: |
       snapcraftctl pull
@@ -36,4 +43,8 @@ apps:
       - freeglut3 
       - libglu1-mesa   
       - ffmpeg
-    
+      
+  homeishome-launch:
+    plugin: nil
+    stage-snaps:
+      - homeishome-launch         
