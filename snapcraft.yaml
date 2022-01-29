@@ -50,6 +50,8 @@ parts:
       - freeglut3 
       - libglu1-mesa   
       - ffmpeg
+
+    stage-snaps:
       - go
       
   homeishome-launch:
