@@ -23,7 +23,7 @@ package-repositories:
 
 apps:
   owncast:
-    command: bin/go run $SNAP/bin/main.go
+    command: bin/main.go
     command-chain: 
       - bin/homeishome-launch      
     plugs:
