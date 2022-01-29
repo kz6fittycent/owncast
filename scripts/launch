@@ -1,31 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-# VARS
-##############################
-LINK="https://github.com/owncast/owncast/releases/download/v0.0.3/owncast-0.0.3-linux-64bit.zip"
-OWN="owncast.zip"
-CAST=$(ls $SNAP_USER_DATA | grep -w owncast)
-##############################
-
-# check if owncast is present
-if [ -f "${CAST}" ]
-then 
-    # start owncast
-    cd $SNAP_USER_DATA
-    $SNAP_USER_DATA/./owncast
-    
-else
-    # get owncast
-    cd $SNAP_USER_DATA
-    wget --no-config -O ${OWN} ${LINK}
-    unzip ${OWN}
-
-    # clean up
-    rm -rf ${OWN}
-    
-    # start owncast
-    $SNAP_USER_DATA/./owncast
-fi    
+$SNAP/bin/go run $SNAP/main.go
 
 
 
