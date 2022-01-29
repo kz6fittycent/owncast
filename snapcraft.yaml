@@ -16,13 +16,6 @@ architectures:
   
 assumes:
   - command-chain  
-layout:
-  /bin:
-    bind: $SNAP/bin
-  /bin/owncast:
-    bind: $SNAP/bin/owncast
-  /bin/webroot:
-    bind: $SNAP/bin/webroot
     
 apps:
   owncast:
