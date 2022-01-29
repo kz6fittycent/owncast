@@ -50,9 +50,7 @@ parts:
       - freeglut3 
       - libglu1-mesa   
       - ffmpeg
-
-    stage-snaps:
-      - go
+      - golang
       
   homeishome-launch:
     plugin: nil
