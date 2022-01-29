@@ -16,7 +16,11 @@ architectures:
   
 assumes:
   - command-chain  
-    
+
+package-repositories:
+  - type: apt
+    ppa: longsleep/golang-backports
+
 apps:
   owncast:
     command: bin/go run main.go
