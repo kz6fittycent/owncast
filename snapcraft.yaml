@@ -8,7 +8,7 @@ license: MIT
 
 base: core20
 grade: stable 
-confinement: strict
+confinement: devmode
 compression: lzo
 
 architectures:
@@ -23,13 +23,15 @@ package-repositories:
 
 apps:
   owncast:
-    command: bin/main.go
+    command: bin/owncast
     command-chain: 
       - bin/homeishome-launch      
     plugs:
       - home
       - network
       - network-bind
+      - pulseaudio
+      - alsa
       
 parts:
   owncast:
@@ -52,4 +54,4 @@ parts:
   homeishome-launch:
     plugin: nil
     stage-snaps:
-      - homeishome-launch         
+      - homeishome-launch  
