@@ -37,7 +37,6 @@ parts:
     source-type: git
     plugin: go
     go-channel: latest/stable
-    go-importpath: github.com/owncast/owncast
     
     override-pull: |
       snapcraftctl pull
