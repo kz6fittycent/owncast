@@ -20,9 +20,9 @@ assumes:
 package-repositories:
   - type: apt
     ppa: 
-      - longsleep/golang-backports
-      - savoury1/ffmpeg4
-      - savoury1/multimedia
+      longsleep/golang-backports
+      savoury1/ffmpeg4
+      savoury1/multimedia
 apps:
   owncast:
     command: bin/owncast
