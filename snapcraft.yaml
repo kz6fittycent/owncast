@@ -47,9 +47,11 @@ parts:
     stage-packages:
       - libslang2
       - freeglut3 
-      - libglu1-mesa   
-      - ffmpeg
+      - libglu1-mesa
       - golang
+      
+    stage-snaps:
+      - ffmpeg
       
   homeishome-launch:
     plugin: nil
