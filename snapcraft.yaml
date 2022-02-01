@@ -19,8 +19,10 @@ assumes:
 
 package-repositories:
   - type: apt
-    ppa: longsleep/golang-backports
-
+    ppa: 
+      - longsleep/golang-backports
+      - savoury1/ffmpeg4
+      - savoury1/multimedia
 apps:
   owncast:
     command: bin/owncast
@@ -49,8 +51,6 @@ parts:
       - freeglut3 
       - libglu1-mesa
       - golang
-      
-    stage-snaps:
       - ffmpeg
       
   homeishome-launch:
