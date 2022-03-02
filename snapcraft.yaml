@@ -40,7 +40,7 @@ parts:
     source: https://github.com/owncast/owncast
     source-type: git
     plugin: go
-    go-channel: latest/stable
+    go-channel: latest/edge
     
     override-pull: |
       snapcraftctl pull
@@ -50,7 +50,7 @@ parts:
       - libslang2
       - freeglut3 
       - libglu1-mesa
-      - golang
+      - golang-1.18
       - ffmpeg
       
   homeishome-launch:
