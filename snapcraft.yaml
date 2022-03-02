@@ -50,7 +50,7 @@ parts:
       - libslang2
       - freeglut3 
       - libglu1-mesa
-      - golang-1.18
+      - golang
       - ffmpeg
       
   homeishome-launch:
