@@ -19,7 +19,9 @@ assumes:
 
 package-repositories:
   - type: apt
-    ppa: longsleep/golang-backports, savoury1/ffmpeg4, savoury1/multimedia
+    ppa: longsleep/golang-backports
+    ppa: savoury1/ffmpeg4
+    ppa: savoury1/multimedia
     
 apps:
   owncast:
