@@ -33,7 +33,6 @@ parts:
     source: https://github.com/owncast/owncast
     source-type: git
     plugin: go
-    go-channel: latest/edge
           
     override-pull: |
       craftctl default
