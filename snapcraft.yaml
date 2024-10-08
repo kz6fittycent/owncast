@@ -18,7 +18,7 @@ architectures:
   
 apps:
   owncast:
-    command: bin/owncast
+    command: launch
     plugs:
       - home
       - network
@@ -44,9 +44,9 @@ parts:
     
     stage-snaps:
       - go/latest/edge 
-      - ffmpeg/latest/edge
     
     stage-packages:
       - libslang2
       - freeglut3 
       - libglu1-mesa
+      - ffmpeg
