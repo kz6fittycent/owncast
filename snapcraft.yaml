@@ -33,8 +33,12 @@ parts:
     plugin: nil
 
     override-build: |
-      go run main.go
-          
+      mkdir -p BUILD
+      cd BUILD/
+      git clone https://github.com/owncast/owncast
+      mkdir -p $CRAFT_PART_INSTALL/bin/
+      cp -r * $CRAFT_PART_INSTALL/bin/
+      
     override-pull: |
       craftctl default
       craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
