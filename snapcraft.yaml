@@ -50,3 +50,7 @@ parts:
       - freeglut3 
       - libglu1-mesa
       - ffmpeg
+
+  publish:
+    plugin: dump
+    source: scripts
