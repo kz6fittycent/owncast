@@ -8,7 +8,7 @@ license: MIT
 issues: https://github.com/owncast/owncast/issues
 source-code: https://github.com/owncast/owncast
 contact: https://github.com/owncast/owncast
-base: core24
+base: core22
 grade: stable 
 confinement: devmode
 compression: lzo
