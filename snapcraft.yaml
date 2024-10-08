@@ -38,7 +38,8 @@ parts:
     override-pull: |
       craftctl default
       craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
-          
+    build-snaps:
+      - go/latest/edge
     stage-packages:
       - libslang2
       - freeglut3 
