@@ -1,10 +1,11 @@
-[![🧪 Snap Builds](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml)
+
+[![owncast](https://snapcraft.io/owncast/badge.svg)](https://snapcraft.io/owncast) [![🧪 Snap Builds](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml)
 
 # Owncast Snap
 
 ## Installation
 ```
-sudo snap install owncast --edge
+sudo snap install owncast
 ```
 
 ## First run

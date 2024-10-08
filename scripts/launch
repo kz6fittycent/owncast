@@ -1,3 +1,3 @@
-#!bin/sh
-cd $SNAP/bin/owncast
+#!bin/bash
+
 go run main.go

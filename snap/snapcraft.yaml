@@ -5,20 +5,26 @@ description: |
   Take control over your content and stream it yourself.
 
 license: MIT
-issues: https://github.com/owncast/owncast/issues
+issues: https://github.com/kz6fittycent/owncast/issues
 source-code: https://github.com/owncast/owncast
-contact: https://github.com/owncast/owncast
-base: core22
+contact: https://github.com/kz6fittycent/owncast
+icon: snap/local/owncast.png
+
+base: core24
 grade: stable 
-confinement: devmode
+confinement: strict
 compression: lzo
 
-architectures:
-  - build-on: amd64
-  
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+
 apps:
   owncast:
     command: launch
+    daemon: simple
+    restart-condition: always
     plugs:
       - home
       - network
@@ -51,7 +57,7 @@ parts:
     
     stage-packages:
       - libslang2
-      - freeglut3 
+      - freeglut3-dev
       - libglu1-mesa
       - ffmpeg
 
