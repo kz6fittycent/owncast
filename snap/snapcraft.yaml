@@ -34,7 +34,7 @@ apps:
       
 parts:
   owncast:
-    source: https://github.com/owncast/owncast
+    source: https://github.com/owncast/./owncast
     source-type: git
     plugin: nil
 
