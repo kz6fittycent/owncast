@@ -5,18 +5,19 @@ description: |
   Take control over your content and stream it yourself.
 
 license: MIT
-
-base: core20
+issues: https://github.com/owncast/owncast/issues
+source-code: https://github.com/owncast/owncast
+contact: https://github.com/owncast/owncast
+base: core24
 grade: stable 
 confinement: devmode
 compression: lzo
 
-architectures:
-  - build-on: amd64
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
   
-assumes:
-  - command-chain  
-
 package-repositories:
   - type: apt
     ppa: longsleep/golang-backports
@@ -26,8 +27,6 @@ package-repositories:
 apps:
   owncast:
     command: bin/owncast
-    command-chain: 
-      - bin/homeishome-launch      
     plugs:
       - home
       - network
@@ -41,10 +40,10 @@ parts:
     source-type: git
     plugin: go
     go-channel: latest/edge
-    
+          
     override-pull: |
-      snapcraftctl pull
-      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"  
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)" 
           
     stage-packages:
       - libslang2
@@ -52,8 +51,3 @@ parts:
       - libglu1-mesa
       - golang
       - ffmpeg
-      
-  homeishome-launch:
-    plugin: nil
-    stage-snaps:
-      - homeishome-launch  
