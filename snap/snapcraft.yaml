@@ -22,7 +22,7 @@ platforms:
 
 apps:
   owncast:
-    command: launch
+    command: bin/owncast/owncast
     daemon: simple
     restart-condition: always
     plugs:
@@ -41,7 +41,7 @@ parts:
     override-build: |
       mkdir -p BUILD
       cd BUILD/
-      git clone https://github.com/owncast/owncast
+      curl -s https://owncast.online/install.sh | bash
       mkdir -p $CRAFT_PART_INSTALL/bin/
       cp -r * $CRAFT_PART_INSTALL/bin/
       
@@ -54,13 +54,13 @@ parts:
     
     stage-snaps:
       - go/latest/edge 
-    
+      
+    build-packages:
+      - curl
+      - unzip
+      
     stage-packages:
       - libslang2
       - freeglut3-dev
       - libglu1-mesa
       - ffmpeg
-
-  launcher:
-    plugin: dump
-    source: scripts
