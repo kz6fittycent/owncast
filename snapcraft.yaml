@@ -55,6 +55,6 @@ parts:
       - libglu1-mesa
       - ffmpeg
 
-  publish:
+  launcher:
     plugin: dump
     source: scripts

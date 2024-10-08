@@ -1,3 +1,5 @@
+[![🧪 Snap Builds](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/kz6fittycent/owncast/actions/workflows/test-snap-can-build.yml)
+
 # Owncast Snap
 
 ## Installation
