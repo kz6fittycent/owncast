@@ -30,7 +30,10 @@ parts:
   owncast:
     source: https://github.com/owncast/owncast
     source-type: git
-    plugin: go
+    plugin: nil
+
+    override-build: |
+      go run main.go
           
     override-pull: |
       craftctl default
@@ -42,3 +45,4 @@ parts:
       - libglu1-mesa
       - golang
       - ffmpeg
+      - gcc
